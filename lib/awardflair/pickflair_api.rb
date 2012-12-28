@@ -24,8 +24,8 @@ class PFBadge
     pickflair_instance.award_badge(@id)
   end
 
-  def award_to(email_of_recipient)
-    pickflair_instance.award_badge_by_email(@id, email_of_recipient)
+  def award_to(email_of_recipient, options={})
+    pickflair_instance.award_badge_by_email(@id, email_of_recipient, options)
   end
 end
 
@@ -66,8 +66,8 @@ class PickFlair
     api_response.parsed_response["data"]["badge_awarding_url"]
   end
 
-  def award_badge_by_email(badge_identifier, email_of_recipient)
-    api_response = self.class.post("/email_awards.json", :body => token.merge(:badge_id => badge_identifier, :email => email_of_recipient))
+  def award_badge_by_email(badge_identifier, email_of_recipient, options={})
+    api_response = self.class.post("/email_awards.json", :body => token.merge(:badge_id => badge_identifier, :email => email_of_recipient).merge(options))
     api_response.parsed_response["data"]["badge_award_url"]
   end
 
