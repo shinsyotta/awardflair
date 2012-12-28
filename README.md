@@ -47,8 +47,8 @@ Or install it yourself as:
     first_badge.award_to("email_address@mydomain.com", :send_email => true)
 
     # Note that send_email is an option, not a requirement.  Default is false.  
-    # If you do not send an email, the user can still claim their badge by creating a PF account using that email address or by following the link you provide.
-    # If they have one, they are automatically awarded the badge.
+    # If you do not send an email, the user can still claim their badge by creating a PF account using that email address or by following the link you provide (which you could show to them or email to them through your own app instead of via PickFlair).
+    # If they have an account at PF, they are automatically awarded the badge.
     # Here's an example with no email notification:
     award_link = first_badge.award_to("email_address@mydomain.com")
 
