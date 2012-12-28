@@ -18,6 +18,11 @@ Or install it yourself as:
 
 ## Usage
 
+    # Get your API keys by:
+    1. Going to http://business.awardflair.com
+    2. Creating a business (which is free)
+    3. Getting your keys at https://yourbusinessnamegoeshere.pickflair.com/applications
+
     # Connect to your PickFlair account
     pf = PickFlair.new(api_key, api_secret, application_id)
 
