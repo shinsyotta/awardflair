@@ -44,7 +44,13 @@ Or install it yourself as:
 
     # Award a badge by email (also gets you a link that you can give to the user.)
     first_badge = pf.badges.first # Getting the first badge you created.
-    first_badge.award_to("email_address@mydomain.com")
+    first_badge.award_to("email_address@mydomain.com", :send_email => true)
+
+    # Note that send_email is an option, not a requirement.  Default is false.  
+    # If you do not send an email, the user can still claim their badge by creating a PF account using that email address or by following the link you provide.
+    # If they have one, they are automatically awarded the badge.
+    # Here's an example with no email notification:
+    award_link = first_badge.award_to("email_address@mydomain.com")
 
 ## Contributing
 
