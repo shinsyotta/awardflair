@@ -8,8 +8,8 @@ Gem::Specification.new do |gem|
   gem.version       = Awardflair::VERSION
   gem.authors       = ["Matt Lally"]
   gem.email         = ["shinsyotta@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{Award flair (badges) to users of your app using the PickFlair service.}
+  gem.summary       = %q{A gem for awarding badges via PickFlair.}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($/)
