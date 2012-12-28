@@ -1,6 +1,6 @@
 # Awardflair
 
-TODO: Write a gem description
+Award flair (badges) to people using your app via the free PickFlair service (http://www.pickflair.com)
 
 ## Installation
 
@@ -18,7 +18,28 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    # Connect to your PickFlair account
+    pf = PickFlair.new(api_key, api_secret, application_id)
+
+    # Get a list of all the badges you have created on PickFlair
+    pf.collect_badges
+
+    # If you have already collected badges, this just gets that list again.  If you haven't, it collects them for the first time
+    pf.badges
+
+    # Get badge information using badge identifier
+    pf.get_badge_by_identifier(badge_identifier)
+
+    # Find a specific badge that you know you have created using it's name.
+    pf.find_badges("Ruby Ace")
+
+    # Award a badge via a link that you can provide to the recipient
+    ruby_ace_badge = pf.find_badges("Ruby Ace").first # Choosing the first (and probably only) badge you have named "Ruby Ace"
+    ruby_ace_badge.award # Returns a link that you can show to recipient so they can claim the badge.  
+
+    # Award a badge by email (also gets you a link that you can give to the user.)
+    first_badge = pf.badges.first # Getting the first badge you created.
+    first_badge.award_to("email_address@mydomain.com")
 
 ## Contributing
 
