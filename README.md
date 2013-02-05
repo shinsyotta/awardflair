@@ -37,7 +37,7 @@ Or install it yourself as:
     pf.get_badge_by_identifier(badge_identifier)
 
     # Find a specific badge that you know you have created using it's name.
-    pf.find_badges("Ruby Ace")
+    pf.find_badges(name: "Ruby Ace")
 
     # Award a badge via a link that you can provide to the recipient
     ruby_ace_badge = pf.find_badges("Ruby Ace").first # Choosing the first (and probably only) badge you have named "Ruby Ace"
